@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://localhost:3000';
+export const BASE_URL = 'https://viannat-backend-mesto.nomoredomains.club';
 
 export const checkResponse = (res) => {
   if (res.ok) {

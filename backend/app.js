@@ -26,7 +26,8 @@ const corsAllowed = [
   'https://localhost:3000',
   'https://localhost:3001',
   'https://viannat-frontend-mesto.nomoredomains.club',
-  'https://viannat-backend-mesto.nomoredomains.club'
+  'https://viannat-backend-mesto.nomoredomains.club',
+  'https://62.84.116.158'
 ]
 
 app.use(cors({

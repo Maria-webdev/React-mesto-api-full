@@ -86,7 +86,7 @@ class Api {
 } 
 
 const api = new Api({
-  baseUrl: 'https://localhost:3000',
+  baseUrl: 'https://viannat-backend-mesto.nomoredomains.club',
   headers: {
   'Content-Type': 'application/json'
   }
