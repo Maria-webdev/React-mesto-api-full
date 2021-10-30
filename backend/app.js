@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+
 const { errors } = require('celebrate');
 const cookieParser = require('cookie-parser');
 
@@ -40,7 +42,18 @@ app.use(cors({
     }
   },
 }));
+
 app.options('*', cors());
+
+app.use(requestLogger);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+
+app.use(requestLogger);
 
 app.post('/signin', userLogin, login);
 app.post('/signup', userCreate, createUser);
@@ -53,6 +66,8 @@ app.use('/users', userRouter);
 app.delete('/signout', signout);
 
 app.use('*', (req, res, next) => next(new NotFoundError('Запрашиваемый ресурс не найден.')));
+
+app.use(errorLogger);
 
 app.use(errors());
 

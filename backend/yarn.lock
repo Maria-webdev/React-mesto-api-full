@@ -1051,7 +1051,7 @@
   "resolved" "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
   "version" "1.8.1"
 
-"express-winston@^4.1.0":
+"express-winston@^4.2.0":
   "integrity" "sha512-EMD74g63nVHi7pFleQw7KHCxiA1pjF5uCwbCfzGqmFxs9KvlDPIVS3cMGpULm6MshExMT9TjC3SqmRGB9kb7yw=="
   "resolved" "https://registry.npmjs.org/express-winston/-/express-winston-4.2.0.tgz"
   "version" "4.2.0"
