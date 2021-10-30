@@ -1,0 +1,32 @@
+.element {
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #000;
+    width: 282px;
+    position: relative;
+}
+
+@media screen and (max-width: 1023px) {
+    .element {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .element {
+        max-width: 45vw;
+        max-height: 30vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .element {
+        max-width: 100%;
+        min-width: 282px;
+        max-height: 75vh;
+    }
+}

@@ -1,0 +1,16 @@
+.profile__avatar {
+  margin: 0;
+  padding: 0;
+  width: 120px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+  
+.profile__avatar:hover {
+  opacity: 0.2 !important;
+}
+  
+.profile__avatar-edit-button:hover ~ .profile__avatar {
+  opacity: 0.2 !important;
+}
+  

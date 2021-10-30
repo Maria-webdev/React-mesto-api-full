@@ -1,0 +1,10 @@
+.login__content {
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  padding: 0;
+  max-width: 358px;
+  min-height: 447px;
+  display: flex;
+  flex-direction: column;
+}
