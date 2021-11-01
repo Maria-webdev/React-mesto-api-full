@@ -68,7 +68,7 @@ class Api {
 
     changeLikeCardStatus(cardId, isLiked) {
       return fetch(`${this._baseUrl}/cards/likes/${cardId}`, { 
-        method: !isLiked ? 'DELETE' : 'PUT',
+        method: !isLiked ? 'PUT' : 'DELETE',
         headers: this._headers,
         credentials: 'include',
       })
@@ -87,6 +87,7 @@ class Api {
 
 const api = new Api({
   baseUrl: 'https://viannat-backend-mesto.nomoredomains.club',
+  //baseUrl: 'http://localhost:3000',
   headers: {
   'Content-Type': 'application/json'
   }

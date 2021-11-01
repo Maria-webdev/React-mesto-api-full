@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const NotAuthError = require('../errors/not-found');
+const NotAuthError = require('../errors/not-auth');
 
 module.exports = (req, res, next) => {
   const token = req.cookies.jwt;

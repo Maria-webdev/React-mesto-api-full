@@ -27,9 +27,14 @@ app.use(cookieParser());
 const corsAllowed = [
   'https://localhost:3000',
   'https://localhost:3001',
+  'http://localhost:3000',
+  'http://localhost:3001',
   'https://viannat-frontend-mesto.nomoredomains.club',
+  'http://viannat-frontend-mesto.nomoredomains.club',
   'https://viannat-backend-mesto.nomoredomains.club',
-  'https://62.84.116.158'
+  'http://viannat-backend-mesto.nomoredomains.club',
+  'https://62.84.116.158',
+  'http://62.84.116.158'
 ]
 
 app.use(cors({
@@ -45,23 +50,19 @@ app.use(cors({
 
 app.options('*', cors());
 
-app.use(requestLogger);
-
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
 });
 
-app.use(requestLogger);
-
 app.post('/signin', userLogin, login);
 app.post('/signup', userCreate, createUser);
 
-app.use(auth);
+app.use(requestLogger);
 
-app.use('/cards', cardsRouter);
-app.use('/users', userRouter);
+app.use('/cards', auth, cardsRouter);
+app.use('/users', auth, userRouter);
 
 app.delete('/signout', signout);
 

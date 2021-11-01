@@ -13,7 +13,7 @@ function Header(props) {
         <div className="header__logged">
           <p className="header__email">{props.email}</p>
           {/* eslint-disable-next-line-jsx-ally/anchor-is-valid */}
-          <a className="header__link" onClick={props.onSignout}>
+          <a className="header__link" href="/" onClick={props.onSignout}>
             Выйти
           </a>
         </div>
