@@ -1,5 +1,5 @@
-//export const BASE_URL = 'https://viannat-backend-mesto.nomoredomains.club';
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://viannat-backend-mesto.nomoredomains.club';
+//export const BASE_URL = 'http://localhost:3000';
 
 export const checkResponse = (res) => {
   if (res.ok) {
