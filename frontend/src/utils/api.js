@@ -13,6 +13,7 @@ class Api {
  
   getInitialCards() { 
     return fetch(`${this._baseUrl}/cards`, { 
+      method: 'GET',
       headers: this._headers,
       credentials: 'include'
   }) 
@@ -22,6 +23,7 @@ class Api {
  
   getUserInfo() { 
     return fetch(`${this._baseUrl}/users/me`, { 
+      method: 'GET',
       headers: this._headers,
       credentials: 'include'
   }) 
@@ -79,7 +81,7 @@ class Api {
       return fetch(`${this._baseUrl}/cards/${cardId}`, { 
         method: 'DELETE', 
         headers: this._headers,
-        credentials: 'include',
+        credentials: 'include'
       }) 
       .then((res) => this._getResponseData(res));
     } 
@@ -90,7 +92,8 @@ const api = new Api({
   //baseUrl: 'http://localhost:3000',
   headers: {
   'Content-Type': 'application/json'
-  }
+  },
+  credentials: 'include'
 })
 
 export default api;

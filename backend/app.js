@@ -1,12 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-const { requestLogger, errorLogger } = require('./middlewares/logger');
-
 const { errors } = require('celebrate');
 const cookieParser = require('cookie-parser');
 
 const cors = require('cors');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -34,8 +33,8 @@ const corsAllowed = [
   'https://viannat-backend-mesto.nomoredomains.club',
   'http://viannat-backend-mesto.nomoredomains.club',
   'https://62.84.116.158',
-  'http://62.84.116.158'
-]
+  'http://62.84.116.158',
+];
 
 app.use(cors({
   credentials: true,
@@ -49,6 +48,8 @@ app.use(cors({
 }));
 
 app.options('*', cors());
+
+app.use(cookieParser());
 
 app.get('/crash-test', () => {
   setTimeout(() => {

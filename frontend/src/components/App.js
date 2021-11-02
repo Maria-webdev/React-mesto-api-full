@@ -35,7 +35,7 @@ function App() {
       if (data) {
         setLoggedIn(true);
         setEmail(data.email);
-        history.push("/");
+        history.push('/');
       } else {
         setSuccess(false);
         setIsInfoTooltipOpen(true);
