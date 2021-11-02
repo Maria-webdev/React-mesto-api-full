@@ -36,6 +36,8 @@ const corsAllowed = [
   'http://62.84.116.158',
 ];
 
+require('dotenv').config();
+
 app.use(cors({
   credentials: true,
   origin(origin, callback) {

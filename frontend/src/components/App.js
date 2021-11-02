@@ -41,9 +41,7 @@ function App() {
         setIsInfoTooltipOpen(true);
       }
     })
-    .catch((err) => {
-      console.log(err);
-    })
+    .catch((err) => console.log(err));
   }, [history])
 
   React.useEffect(() => {
