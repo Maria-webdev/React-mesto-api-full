@@ -7,32 +7,32 @@ const BadRequestError = require('../errors/bad-request');
 const ConflictError = require('../errors/conflict');
 const NotFoundError = require('../errors/not-found');
 
-// module.exports.getUsers = (req, res, next) => {
-//   User.find({})
-//     .then((users) => res.send(users))
-//     .catch(next);
-// };
+module.exports.getUsers = (req, res, next) => {
+  User.find({})
+    .then((users) => res.send(users))
+    .catch(next);
+};
 
-// module.exports.getUser = (req, res, next) => {
-//   User.findById(req.params._id)
-//     .then((user) => {
-//       if (!user) {
-//         throw new NotFoundError('Нет пользователя с таким id');
-//       }
-//       res.send(user);
-//     })
-//     .catch((err) => {
-//       if (err.message === 'NotValidId') {
-//         throw new NotFoundError('Нет пользователя с таким id');
-//       }
-//       if (err.name === 'CastError') {
-//         throw new BadRequestError('Переданы некорректные данные');
-//       } else {
-//         next(err);
-//       }
-//     })
-//     .catch(next);
-// };
+module.exports.getUser = (req, res, next) => {
+  User.findById(req.params._id)
+    .then((user) => {
+      if (!user) {
+        throw new NotFoundError('Нет пользователя с таким id');
+      }
+      res.send(user);
+    })
+    .catch((err) => {
+      if (err.message === 'NotValidId') {
+        throw new NotFoundError('Нет пользователя с таким id');
+      }
+      if (err.name === 'CastError') {
+        throw new BadRequestError('Переданы некорректные данные');
+      } else {
+        next(err);
+      }
+    })
+    .catch(next);
+};
 
 module.exports.createUser = (req, res, next) => {
   User.findOne({ email: req.body.email })

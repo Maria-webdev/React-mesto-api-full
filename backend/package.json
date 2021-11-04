@@ -1,8 +1,8 @@
 {
     "name": "express-mesto",
     "version": "0.1.0",
-    "description": "",
-    "main": "index.js",
+    "description": "mesto-backend, viannat",
+    "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "lint": "npx eslint .",
